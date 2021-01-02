@@ -1,7 +1,163 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+* {
+	/* couleurs */
+	--main-bg-color: #f7f7f7;
+	--secondary-bg-color: #ffffff;
+	--shadow-box-color: rgba(68,68,68,0.75);
+	--text-primary-color: #333333;
+	--text-secondary-color: #525252;
+	--title-primary-color: #010035;
+	--title-secondary-color: #b8b8cc;
+	--button-background-color: #e9041e;
+	--button-text-color: #ffffff;
+	/* polices */
+	--text-font: 'Roboto';
+	--title-font: 'Montserrat';
+}
+
+html {
+	height: 100%;
 }
 
 body {
-	
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	position: relative;
+	background-color: var(--main-bg-color);
+}
+
+/*
+** Textes
+*/
+h1, h2 {
+	font-family: sans-serif;
+	font-family: var(--title-font);
+	color: var(--title-primary-color);
+}
+
+h1 {
+	font-size: x-large;
+}
+
+h2 {
+	font-size: large;
+}
+
+p {
+	font-family: sans-serif;
+	font-family: var(--text-font);
+	color: var(--text-primary-color);
+}
+
+label {
+	font-family: sans-serif;
+	font-family: var(--text-font);
+	font-weight: bold;
+}
+
+a {
+	color: var(--text-primary-color);
+	text-decoration: none;
+}
+
+em {
+	color: var(--title-secondary-color);
+	font-style: normal;
+}
+
+/*
+** Entête et pied de page
+*/
+header, footer {
+	width: 100%;
+	background-color: var(--secondary-bg-color);
+}
+
+header {
+    box-shadow: 1px 1px 2px var(--shadow-box-color);
+}
+
+header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header img {
+	height: 75px;
+}
+
+header #logo_container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 350px;
+}
+
+header #logo_container a {
+	margin-right: 10px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	border-top: solid 1px var(--shadow-box-color);
+	text-align: center;
+}
+
+/*
+** Contenants
+*/
+.container {
+	max-width: 1000px;
+	margin: auto;
+}
+
+.bloc-content {
+	width: 100%;
+	background-color: var(--secondary-bg-color);
+    box-shadow: 1px 1px 2px var(--shadow-box-color);
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/*
+** Boutons
+*/
+button {
+	background-color: var(--button-background-color);
+	color: var(--button-text-color);
+	font-family: sans-serif;
+	font-family: var(--text-font);
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 28px;
+	text-align: center;
+}
+
+input[type=submit] {
+	background-color: var(--button-background-color);
+	color: var(--button-text-color);
+	font-family: sans-serif;
+	font-family: var(--text-font);
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 28px;
+	text-align: center;
+}
+
+/*
+** Champs de saisie
+*/
+input[type=text], input[type=password] {
+	width: 100%;
+	text-align: center;
+	height: 30px;
+	margin: 15px 0;
 }
