@@ -19,11 +19,11 @@
 			<!-- Connexion -->
 			<h2>Mot de passe oublié</h2>
 			<form method="post" action="forgottenpass.php">
-				<label for="username">Username</label>
-				<br>
-				<input type="text" name="username" maxlength="255" required />
-				<br>
-				<input type="submit" name="connexion" value="Afficher ma question secrète >" />
+				<p>
+					<label for="username">Username</label>
+					<input type="text" name="username" maxlength="255" required />
+				</p>
+				<input type="submit" name="connexion" class="button" value="Afficher ma question secrète >" />
 			</form>			
 		</div>
 	</div>

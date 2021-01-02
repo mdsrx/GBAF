@@ -10,22 +10,23 @@
 	--title-primary-color: #010035;
 	--title-secondary-color: #b8b8cc;
 	--button-background-color: #e9041e;
+	--button-background-hover-color: #f75e6f;
 	--button-text-color: #ffffff;
 	/* polices */
 	--text-font: 'Roboto';
 	--title-font: 'Montserrat';
 }
 
-html {
+html,body {
 	height: 100%;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	min-height: 100%;
-	position: relative;
 	background-color: var(--main-bg-color);
+	display: flex;
+	flex-direction: column;
 }
 
 /*
@@ -101,15 +102,19 @@ header #logo_container a {
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
 	border-top: solid 1px var(--shadow-box-color);
 	text-align: center;
+	flex-shrink: 0;
 }
 
 /*
 ** Contenants
 */
+
+.content-page {
+	flex: 1 0 auto;
+}
+
 .container {
 	max-width: 1000px;
 	margin: auto;
@@ -120,15 +125,14 @@ footer {
 	background-color: var(--secondary-bg-color);
     box-shadow: 1px 1px 2px var(--shadow-box-color);
     padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0px;
     text-align: center;
 }
 
 /*
 ** Boutons
 */
-button {
+.button {
 	background-color: var(--button-background-color);
 	color: var(--button-text-color);
 	font-family: sans-serif;
@@ -138,18 +142,16 @@ button {
 	border-radius: 10px;
 	padding: 12px 28px;
 	text-align: center;
+	transition-duration: 0.4s;
 }
 
-input[type=submit] {
-	background-color: var(--button-background-color);
+.button:hover {
+	background-color: var(--button-background-hover-color);
+	cursor: pointer;
+}
+
+.button a {
 	color: var(--button-text-color);
-	font-family: sans-serif;
-	font-family: var(--text-font);
-	font-weight: bold;
-	border: none;
-	border-radius: 10px;
-	padding: 12px 28px;
-	text-align: center;
 }
 
 /*
