@@ -19,6 +19,13 @@
 			<div class="bloc-content">
 				<!-- Connexion -->
 				<h2>Connexion</h2>
+				<div class="error">
+					<?php
+					if (isset($_GET['connexion']) && $_GET['connexion'] == '0') {
+						echo '<p>Le pseudo ou le mot de passe est incorrect.</p>';
+					}
+					?>
+				</div>
 				<form method="post" action="connexion.php">
 					<p>
 						<label for="username">Username</label>

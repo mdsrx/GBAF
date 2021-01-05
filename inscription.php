@@ -19,7 +19,17 @@
 			<div class="bloc-content">
 				<!-- Inscription -->
 				<h2>Inscription</h2>
-				<form method="post" action="inscription.php">
+				<div class="error">
+					<?php
+					if (isset($_GET['pass']) && $_GET['pass'] == '0') {
+						echo "<p>Les deux mots de passe ne correspondent pas.</p>";
+					}
+					if (isset($_GET['pseudo']) && $_GET['pseudo'] == '0') {
+						echo "<p>Le pseudo est déjà pris. Veuillez en choisir un autre.</p>";
+					}
+					?>
+				</div>
+				<form method="post" action="inscription_post.php">
 					<p>
 						<label for="lastname">Nom</label>
 						<input type="text" name="lastname" maxlength="255" required />
@@ -49,7 +59,7 @@
 						<input type="text" name="answer" maxlength="255" required />
 					</p>
 					<input type="submit" class="button" name="inscription" value="S'inscrire >" />
-				</form>			
+				</form>	
 			</div>
 		</div>
 	</div>

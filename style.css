@@ -32,6 +32,7 @@ body {
 /*
 ** Textes
 */
+
 h1, h2 {
 	font-family: sans-serif;
 	font-family: var(--title-font);
@@ -63,14 +64,27 @@ a {
 	text-decoration: none;
 }
 
+p a:hover {
+	text-decoration: underline var(--text-primary-color);
+}
+
 em {
 	color: var(--title-secondary-color);
 	font-style: normal;
 }
 
+em:hover {
+	text-decoration: underline var(--title-secondary-color);	
+}
+
+.error p {
+	color: var(--button-background-color);
+}
+
 /*
 ** Entête et pied de page
 */
+
 header, footer {
 	width: 100%;
 	background-color: var(--secondary-bg-color);
@@ -132,6 +146,7 @@ footer {
 /*
 ** Boutons
 */
+
 .button {
 	background-color: var(--button-background-color);
 	color: var(--button-text-color);
