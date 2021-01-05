@@ -81,6 +81,10 @@ em:hover {
 	color: var(--button-background-color);
 }
 
+.confirmation p {
+	color: var(--title-secondary-color);
+}
+
 /*
 ** Entête et pied de page
 */

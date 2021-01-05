@@ -17,7 +17,7 @@
 	<div class="content-page">
 		<div class="container">
 			<div class="bloc-content">
-				<!-- Connexion -->
+				<!-- Mot de passe oublié -->
 				<h2>Mot de passe oublié</h2>
 				<form method="post" action="forgottenpass.php">
 					<p>
