@@ -2,6 +2,13 @@
 /*
 ** PAGE D'ACCUEIL
 */
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+
+if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
+	header('Location: partners.php');
+}
 ?>
 <!DOCTYPE html>
 <html>

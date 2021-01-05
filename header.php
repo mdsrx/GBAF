@@ -6,7 +6,9 @@
 		</div>
 		<div id="connected">
 			<?php
-			session_start();
+			if (session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
 			if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'])) {
 			?>
 			<p>
@@ -14,7 +16,7 @@
 					<?php echo $_SESSION['firstname'] . ' ' . $_SESSION['lastname']; ?>
 				</a>
 				<br>
-				<a href="deconnexion.php"><em>Se déconnecter</em></a>
+				<a href="deconnexion.php"><em style="font-size: small;">Se déconnecter</em></a>
 			</p>
 			<?php
 			} else {
