@@ -163,6 +163,15 @@ footer {
 
 }
 
+.partenaire {
+
+}
+
+.partenaire p {
+	text-align: justify;
+}
+
+
 /*
 ** Boutons
 */
@@ -203,8 +212,29 @@ input[type=text], input[type=password] {
 ** Images
 */
 
-.bloc-content img {
+.presentation img {
 	width: 100%;
+}
+
+.partenaire .logo_fullwidth {
+	height: 200px;
+}
+
+.partenaire img {
+	max-width: 100%;
+	max-height: 100%;
+	border: solid 1px var(--title-secondary-color);
+}
+
+li .logo_partner {
+	width: 200px;
+	display: flex;
+	border: solid 1px var(--title-secondary-color);
+}
+
+li .logo_partner img {
+	width: 100%;
+	align-self: center;
 }
 
 /*
@@ -224,16 +254,6 @@ li {
 	padding: 10px;
 	display: flex;
 	position: relative;
-}
-
-li .logo_partner {
-	width: 200px;
-	display: flex;
-	border: solid 1px var(--title-secondary-color);
-}
-
-li .logo_partner img {
-	align-self: center;
 }
 
 li h3, li p {

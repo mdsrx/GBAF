@@ -80,7 +80,7 @@ catch (Exception $e) {
 						*/
 
 						// affichage du lien vers la page partner
-						echo '<button class="button"><a href="partners.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></button></div>';
+						echo '<button class="button"><a href="partner.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></button></div>';
 
 						echo '</li>';
 					}
