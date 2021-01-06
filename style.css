@@ -33,7 +33,7 @@ body {
 ** Textes
 */
 
-h1, h2 {
+h1, h2, h3 {
 	font-family: sans-serif;
 	font-family: var(--title-font);
 	color: var(--title-primary-color);
@@ -45,6 +45,10 @@ h1 {
 
 h2 {
 	font-size: large;
+}
+
+h3 {
+	font-size: medium;
 }
 
 .presentation h2 {
@@ -201,4 +205,49 @@ input[type=text], input[type=password] {
 
 .bloc-content img {
 	width: 100%;
+}
+
+/*
+** Listes
+*/
+
+ul {
+	list-style: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	border: solid 1px var(--title-secondary-color);
+	margin-bottom: 20px;
+	padding: 10px;
+	display: flex;
+	position: relative;
+}
+
+li .logo_partner {
+	width: 200px;
+	display: flex;
+	border: solid 1px var(--title-secondary-color);
+}
+
+li .logo_partner img {
+	align-self: center;
+}
+
+li h3, li p {
+	text-align: left;
+}
+
+li .text_partner {
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+li .button {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 5px 10px;
 }

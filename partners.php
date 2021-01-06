@@ -5,9 +5,21 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+// si pas connecté => redirection vers connexion
 if (!isset($_SESSION['id_user'])) {
 	header('Location: index.php');
 	die();	
+}
+/*
+** CONNEXION A LA BASE DE DONNEES
+*/
+// Connexion à la BDD MySQL sous WAMP
+// affiche un message d'erreur si connexion échouée
+try {
+	$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch (Exception $e) {
+	die('Erreur : ' . $e->getMessage());
 }
 
 ?>
@@ -43,11 +55,39 @@ if (!isset($_SESSION['id_user'])) {
 		<div class="bloc-content">
 			<!-- Affichage des partenaires -->
 			<h2>Acteurs et Partenaires</h2>
-			<?php
-				/*
-				** Récupération des partenaires dans la BDD
-				*/
-			?>
+			<ul>
+				<?php
+					/*
+					** Récupération des partenaires dans la BDD
+					*/
+					$reponse = $bdd->query('SELECT id_acteur, acteur, description, logo FROM acteurs ORDER BY id_acteur');
+					while ($donnees = $reponse->fetch()) {
+						// élément de liste
+						echo '<li>';
+
+						// affichage du logo
+						echo '<div class="logo_partner"><img src="img/partners/' . htmlspecialchars($donnees['logo']) . '" alt="Logo ' . htmlspecialchars($donnees['acteur']) .  '" /></div>';
+
+						// affichage du nom de l'acteur
+						echo '<div class="text_partner"><h3>' . htmlspecialchars($donnees['acteur']) . '</h3>';
+
+						// affichage de la description limitée à une phrase
+						echo '<p>' . substr(htmlspecialchars($donnees['description']), 0, strpos(htmlspecialchars($donnees['description']), ".", 1) + 1) . ' [...]</p>';
+
+						// affichage du nombe de likes / dislikes / commentaires
+						/*
+						** TO DO
+						*/
+
+						// affichage du lien vers la page partner
+						echo '<button class="button"><a href="partners.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></button></div>';
+
+						echo '</li>';
+					}
+
+					$reponse->closeCursor();
+				?>
+			</ul>
 		</div>
 	</div>
 	<?php
