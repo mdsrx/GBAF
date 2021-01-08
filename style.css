@@ -171,7 +171,6 @@ footer {
 	text-align: justify;
 }
 
-
 /*
 ** Boutons
 */
@@ -272,10 +271,38 @@ li .button {
 	padding: 5px 10px;
 }
 
+/*
+** Commentaires
+*/
+
 .post {
 	display: block;
 }
 
 .post em {
 	font-weight: lighter;
+}
+
+#add_comment p {
+	text-align: left;
+}
+
+#add_comment textarea {
+	width: 100%;
+	resize: none;
+	font-family: sans-serif;
+	font-family: var(--text-font);
+	color: var(--text-primary-color);
+	min-height: 100px;
+}
+
+.comment {
+	position: relative;
+}
+
+.btn_add {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	padding: 5px 10px;
 }

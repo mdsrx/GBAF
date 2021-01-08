@@ -74,31 +74,48 @@ if (!isset($resultat) || empty($resultat)) {
 				<!-- Afficher le nombre de likes / dislikes -->
 				<!-- Possibilité de voter -->
 			</div>
-			<div class="bloc-content">
+			<div class="bloc-content comment">
+				<button class="button btn_add"><a href="#add_comment">Ajouter un commentaire ></a></button>
 				<h2>Commentaires</h2>
 				<!-- Espace commentaires -->
 				<!-- Affichage des commentaires -->
 				<ul>
 					<?php
 					// récupération des commentaires
-					$reponse = $bdd->prepare('SELECT post, id_user, DATE_FORMAT(date_post, \'%d/%m/%Y %Hh%imin%ss\') AS dateCom FROM posts WHERE id_acteur = ?');
-					$reponse-> execute(array($id_acteur));
-
+					$reponse = $bdd->prepare('SELECT post, id_user, DATE_FORMAT(date_post, \'%d/%m/%Y %Hh%imin%ss\') AS dateCom FROM posts WHERE id_acteur = ? ORDER BY dateCom DESC');
+					$reponse->execute(array($id_acteur));
+					$nbrComments = 0;
 					while ($donnees = $reponse->fetch()) {
 						// récupération de l'auteur du commentaire
 						$rep = $bdd->prepare('SELECT nom, prenom FROM membres WHERE id_user = ?');
 						$rep->execute(array($donnees['id_user']));
 						$user_infos = $rep->fetch();
 						// affichage du commentaire
-						echo '<li class="post"><h3>' . $user_infos['prenom'] . " " . $user_infos['nom'] . ' <em>' . $donnees['dateCom'] . '</em></h3><p>' . $donnees['post'] . '</p></li>';
+						echo '<li class="post"><h3>' . htmlspecialchars($user_infos['prenom']) . " " . $user_infos['nom'] . ' <em>' . $donnees['dateCom'] . '</em></h3><p>' . nl2br(htmlspecialchars($donnees['post'])) . '</p></li>';
 						$rep->closeCursor();
+						$nbrComments++;
 					}
+					if ($nbrComments === 0)
+						echo '<p>Il n\'y a pour l\'instant aucun commentaires pour cet acteur.</p>';
 					$reponse->closeCursor();
 					?>
 				</ul>
 			</div>
-			<!-- TO DO -->
-			<!-- Ajout d'un commentaire -->
+			<div class="bloc-content">
+				<!-- Ajout d'un commentaire -->
+				<h2>Ajouter un commentaire</h2>
+				<form method="post" action="add_comment.php" id="add_comment">
+					<input type="hidden" name="id_acteur" value="<?php echo $id_acteur; ?>"/>
+					<input type="hidden" name="id_user" value="<?php echo $_SESSION['id_user'] ?>"/>
+					<p>
+						<label for="commentaire">Votre commentaire :</label>
+						<br/>
+						<br/>
+						<textarea name="commentaire" placeholder="Ecrivez votre commentaire ici" required></textarea>
+					</p>
+					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
+				</form>
+			</div>
 			<p>
 				<a href="partners.php"><em>Retour à la liste des partenaires ></em></a>
 			</p>
