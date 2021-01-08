@@ -70,9 +70,50 @@ if (!isset($resultat) || empty($resultat)) {
 					}
 				?>
 				<!-- Espace Like / Dislike -->
-				<!-- TO DO -->
-				<!-- Afficher le nombre de likes / dislikes -->
-				<!-- Possibilité de voter -->
+				<div class="likes">
+					<!-- Afficher le nombre de likes / dislikes -->
+					<!-- Possibilité de voter via lien -->
+					<?php
+						// récupération des votes de l'acteur
+						$rep = $bdd->prepare('SELECT id_user, vote, id_acteur FROM votes WHERE id_acteur = ?');
+						$rep->execute(array($id_acteur));
+						$nbrLikes = 0;
+						$nbrDislikes = 0;
+						$liked = "";
+						$disliked = "";
+						while ($votes = $rep->fetch()) {
+							// comptage du nbr de likes et dislikes
+							if ($votes['vote'] == 'like') {
+								$nbrLikes++;
+								// si le vote a été fait par l'utilisateur connecté
+								if ($votes['id_user'] == $_SESSION['id_user']) {
+									$liked = "liked";
+								}
+							} else if ($votes['vote'] == 'dislike') {
+								$nbrDislikes++;
+								// si le vote a été fait par l'utilisateur connecté
+								if ($votes['id_user'] == $_SESSION['id_user']) {
+									$disliked = "disliked";
+								}
+							}
+						}
+						$rep->closeCursor();
+					?>
+					<p>
+						<a href="#" class="<?php echo $liked; ?>">
+							<em>
+								<img src="img/like.png" alt="Icône J'aime"/>
+								J'aime (<?php echo $nbrLikes; ?>)
+							</em>
+						</a>
+						<a href="#" class="<?php echo $disliked; ?>">
+							<em>
+								<img src="img/dislike.png" alt="Icône Je n'aime pas"/>
+								Je n'aime pas (<?php echo $nbrDislikes; ?>)
+							</em>
+						</a>
+					</p>
+				</div>
 			</div>
 			<div class="bloc-content comment">
 				<button class="button btn_add"><a href="#add_comment">Ajouter un commentaire ></a></button>

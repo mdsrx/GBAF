@@ -200,6 +200,7 @@ footer {
 /*
 ** Champs de saisie
 */
+
 input[type=text], input[type=password] {
 	width: 100%;
 	text-align: center;
@@ -305,4 +306,30 @@ li .button {
 	top: 30px;
 	right: 20px;
 	padding: 5px 10px;
+}
+
+/*
+** Likes / Dislikes
+*/
+
+.likes {
+
+}
+
+.likes p {
+	text-align: center;
+}
+
+.likes a:first-child {
+	margin-right: 10px;
+}
+
+.likes img {
+	border: none;
+	width: 20px;
+}
+
+.likes .liked, .likes .disliked {
+	font-weight: bold;
+	text-decoration: underline var(--title-secondary-color);
 }
