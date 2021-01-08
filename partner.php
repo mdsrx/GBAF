@@ -69,11 +69,36 @@ if (!isset($resultat) || empty($resultat)) {
 						echo '<p>' . nl2br(htmlspecialchars($resultat['description'])) . '</p>';
 					}
 				?>
+				<!-- Espace Like / Dislike -->
+				<!-- TO DO -->
+				<!-- Afficher le nombre de likes / dislikes -->
+				<!-- Possibilité de voter -->
 			</div>
 			<div class="bloc-content">
 				<h2>Commentaires</h2>
 				<!-- Espace commentaires -->
+				<!-- Affichage des commentaires -->
+				<ul>
+					<?php
+					// récupération des commentaires
+					$reponse = $bdd->prepare('SELECT post, id_user, DATE_FORMAT(date_post, \'%d/%m/%Y %Hh%imin%ss\') AS dateCom FROM posts WHERE id_acteur = ?');
+					$reponse-> execute(array($id_acteur));
+
+					while ($donnees = $reponse->fetch()) {
+						// récupération de l'auteur du commentaire
+						$rep = $bdd->prepare('SELECT nom, prenom FROM membres WHERE id_user = ?');
+						$rep->execute(array($donnees['id_user']));
+						$user_infos = $rep->fetch();
+						// affichage du commentaire
+						echo '<li class="post"><h3>' . $user_infos['prenom'] . " " . $user_infos['nom'] . ' <em>' . $donnees['dateCom'] . '</em></h3><p>' . $donnees['post'] . '</p></li>';
+						$rep->closeCursor();
+					}
+					$reponse->closeCursor();
+					?>
+				</ul>
 			</div>
+			<!-- TO DO -->
+			<!-- Ajout d'un commentaire -->
 			<p>
 				<a href="partners.php"><em>Retour à la liste des partenaires ></em></a>
 			</p>

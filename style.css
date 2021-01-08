@@ -271,3 +271,11 @@ li .button {
 	right: 10px;
 	padding: 5px 10px;
 }
+
+.post {
+	display: block;
+}
+
+.post em {
+	font-weight: lighter;
+}
