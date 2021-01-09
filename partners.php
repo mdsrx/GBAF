@@ -74,11 +74,35 @@ catch (Exception $e) {
 						// affichage de la description limitée à une phrase
 						echo '<p>' . substr(htmlspecialchars($donnees['description']), 0, strpos(htmlspecialchars($donnees['description']), ".", 1) + 1) . ' [...]</p>';
 
-						// affichage du nombe de likes / dislikes / commentaires
-						/*
-						** TO DO
-						*/
-
+						// affichage du nombe de likes / dislikes
+						$rep = $bdd->prepare('SELECT vote FROM votes WHERE id_acteur = ?');
+						$rep->execute(array($donnees['id_acteur']));
+						$nbrLikes = 0;
+						$nbrDislikes = 0;
+						while ($votes = $rep->fetch()) {
+							// comptage du nbr de likes et dislikes
+							if ($votes['vote'] == 'like')
+								$nbrLikes++;
+							else if ($votes['vote'] == 'dislike')
+								$nbrDislikes++;
+						}
+						$rep->closeCursor();
+						?>
+						<div class="likes_display">
+							<div class="vote">
+								<p>
+									<img src="img/like.png" alt="Icône J'aime"/>
+									(<?php echo $nbrLikes; ?>)
+								</p>
+							</div>
+							<div class="vote">
+								<p>
+									<img src="img/dislike.png" alt="Icône Je n'aime pas"/>
+									(<?php echo $nbrDislikes; ?>)
+								</p>
+							</div>
+						</div>
+						<?php
 						// affichage du lien vers la page partner
 						echo '<button class="button"><a href="partner.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></button></div>';
 

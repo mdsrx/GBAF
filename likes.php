@@ -53,7 +53,7 @@ if (isset($_GET['idacteur']) && isset($_GET['vote'])){
 			));
 		} else {
 			// l'utilisateur a déjà voté pour cet acteur
-			// si clic sur déjà voté, annulation du vote
+			// si même vote, annulation du vote
 			if ($resultat['vote'] == $vote)
 				$vote = 'novote';
 			$up_vote = $bdd->prepare('UPDATE votes SET vote = :vote WHERE id_user = :id_user AND id_acteur = :id_acteur');

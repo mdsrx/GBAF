@@ -320,7 +320,7 @@ li .button {
 	text-align: center;
 }
 
-.likes img {
+.likes_display img, .likes img {
 	border: none;
 	width: 20px;
 }
@@ -333,6 +333,12 @@ li .button {
 	display: inline-block;
 }
 
-.likes .vote:first-child {
+.likes_display .vote:first-child, .likes .vote:first-child {
 	margin-right: 15px;
 }
+
+.likes_display {
+	display: flex;
+	margin:0;
+}
+
