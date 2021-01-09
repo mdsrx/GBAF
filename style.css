@@ -320,10 +320,6 @@ li .button {
 	text-align: center;
 }
 
-.likes a:first-child {
-	margin-right: 10px;
-}
-
 .likes img {
 	border: none;
 	width: 20px;
@@ -331,5 +327,12 @@ li .button {
 
 .likes .liked, .likes .disliked {
 	font-weight: bold;
-	text-decoration: underline var(--title-secondary-color);
+}
+
+.likes .vote {
+	display: inline-block;
+}
+
+.likes .vote:first-child {
+	margin-right: 15px;
 }
