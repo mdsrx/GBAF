@@ -1,22 +1,11 @@
 <?php
-/*
-** CONNEXION A LA BASE DE DONNEES
-*/
 
-// Connexion à la BDD MySQL sous WAMP
-// affiche un message d'erreur si connexion échouée
-try {
-	$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-
-catch (Exception $e) {
-	die('Erreur : ' . $e->getMessage());
-}
+// Connexion à la BDD
+require 'connect_database.php';
 
 /*
 ** MISE A JOUR DES INFOS DANS LA BASE
 */
-
 if (isset($_POST['id_user']) && isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['username']) && isset($_POST['pass']) && isset($_POST['question']) && isset($_POST['answer'])) {
 
 	$id_user = $_POST['id_user'];

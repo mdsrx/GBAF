@@ -1,5 +1,7 @@
 <?php
-
+/*
+** CONNEXION A LA BASE DE DONNEES
+*/
 $sqlHost     = 'localhost'; 		
 $sqlUser     = 'root';			
 $sqlPassword = '';				

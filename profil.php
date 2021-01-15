@@ -11,20 +11,9 @@ if (!isset($_SESSION['id_user'])) {
 	die();	
 } else {
 	$id_user = $_SESSION['id_user'];
-	/*
-	** CONNEXION A LA BASE DE DONNEES
-	*/
-
-	// Connexion à la BDD MySQL sous WAMP
-	// affiche un message d'erreur si connexion échouée
-	try {
-		$bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-	}
-
-	catch (Exception $e) {
-		die('Erreur : ' . $e->getMessage());
-	}
-
+	// Connexion à la BDD
+	require 'connect_database.php';
+	
 	// récupérer dans la base les infos de l'utilisateur
 	$req = $bdd->prepare('SELECT id_user, nom, prenom, username, password, question, reponse FROM membres WHERE id_user = :id_user');
 	$req->execute(array(
