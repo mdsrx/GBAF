@@ -152,6 +152,7 @@ footer {
 
 .bloc-content {
 	width: 100%;
+	box-sizing: border-box;
 	background-color: var(--secondary-bg-color);
     box-shadow: 1px 1px 2px var(--shadow-box-color);
     padding: 20px;
@@ -227,7 +228,7 @@ input[type=text], input[type=password] {
 }
 
 li .logo_partner {
-	width: 200px;
+	max-width: 225px;
 	display: flex;
 	border: solid 1px var(--title-secondary-color);
 }

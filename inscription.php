@@ -14,9 +14,9 @@
 	<?php
 	include 'header.php';
 	?>
-	<div class="content-page">
+	<section class="content-page">
 		<div class="container">
-			<div class="bloc-content">
+			<section class="bloc-content">
 				<!-- Inscription -->
 				<h2>Inscription</h2>
 				<div class="error">
@@ -60,9 +60,9 @@
 					</p>
 					<input type="submit" class="button" name="inscription" value="S'inscrire >" />
 				</form>	
-			</div>
+			</section>
 		</div>
-	</div>
+	</section>
 	<?php
 	include 'footer.php';
 	?>

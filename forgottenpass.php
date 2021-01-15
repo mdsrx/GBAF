@@ -75,9 +75,9 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 	<?php
 	include 'header.php';
 	?>
-	<div class="content-page">
+	<section class="content-page">
 		<div class="container">
-			<div class="bloc-content">
+			<section class="bloc-content">
 				<!-- Mot de passe oublié -->
 				<h2>Mot de passe oublié</h2>
 				<div class="confirmation">
@@ -147,9 +147,9 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 						}
 					?>
 				</form>			
-			</div>
+			</section>
 		</div>
-	</div>
+	</section>
 	<?php
 	include 'footer.php';
 	?>

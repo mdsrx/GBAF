@@ -21,9 +21,9 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 	<?php
 	include 'header.php';
 	?>
-	<div class="content-page">
+	<section class="content-page">
 		<div class="container">
-			<div class="bloc-content">
+			<section class="bloc-content">
 				<!-- Connexion -->
 				<h2>Connexion</h2>
 				<div class="error">
@@ -47,8 +47,8 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 				<p>
 					<a href="forgottenpass.php"><em>Mot de passe oublié ?</em></a>
 				</p>
-			</div>
-			<div class="bloc-content">
+			</section>
+			<section class="bloc-content">
 				<!-- Inscription -->
 				<h2>Première visite ?</h2>
 				<p>Pour profiter de nos services, créez dès à présent un compte sur l'extranet de GBAF.</p>
@@ -56,9 +56,9 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 				<p>
 					<button class="button"><a href="inscription.php">S'inscrire ></a></button>
 				</p>
-			</div>
+			</section>
 		</div>
-	</div>
+	</section>
 	<?php
 	include 'footer.php';
 	?>

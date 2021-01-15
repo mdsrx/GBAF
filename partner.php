@@ -44,9 +44,9 @@ if (!isset($resultat) || empty($resultat)) {
 	<?php
 	include 'header.php';
 	?>
-	<div class="content-page">
+	<section class="content-page">
 		<div class="container">
-			<div class="bloc-content partenaire">
+			<section class="bloc-content partenaire">
 				
 				<!-- Affichage logo, acteur, description -->
 				<?php
@@ -119,8 +119,8 @@ if (!isset($resultat) || empty($resultat)) {
 						</p>
 					</div>
 				</div>
-			</div>
-			<div class="bloc-content comment">
+			</section>
+			<section class="bloc-content comment">
 				<button class="button btn_add"><a href="#add_comment">Ajouter un commentaire ></a></button>
 				<h2>Commentaires (<?php echo $nbrComments; ?>)</h2>
 				<!-- Espace commentaires -->
@@ -146,8 +146,8 @@ if (!isset($resultat) || empty($resultat)) {
 					$reponse->closeCursor();
 					?>
 				</ul>
-			</div>
-			<div class="bloc-content">
+			</section>
+			<section class="bloc-content">
 				<!-- Ajout d'un commentaire -->
 				<h2>Ajouter un commentaire</h2>
 				<form method="post" action="add_comment.php" id="add_comment">
@@ -161,12 +161,12 @@ if (!isset($resultat) || empty($resultat)) {
 					</p>
 					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
 				</form>
-			</div>
-			<p>
-				<a href="partners.php"><em>Retour à la liste des partenaires ></em></a>
-			</p>
+			</section>
+				<p>
+					<a href="partners.php"><em>Retour à la liste des partenaires ></em></a>
+				</p>
 		</div>
-	</div>
+	</section>
 	<?php
 	include 'footer.php';
 	?>
