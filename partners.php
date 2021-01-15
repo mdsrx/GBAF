@@ -111,7 +111,7 @@ require 'connect_database.php';
 							</div>
 							<?php
 							// affichage du lien vers la page partner
-							echo '<button class="button"><a href="partner.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></button></div>';
+							echo '<a class="button" href="partner.php?id=' . $donnees['id_acteur'] . '">Afficher la suite ></a></div>';
 
 							echo '</li>';
 						}

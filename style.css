@@ -187,11 +187,13 @@ footer {
 	padding: 12px 28px;
 	text-align: center;
 	transition-duration: 0.4s;
+	font-size: small;
 }
 
 .button:hover {
 	background-color: var(--button-background-hover-color);
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .button a {
@@ -300,13 +302,6 @@ li .button {
 
 .comment {
 	position: relative;
-}
-
-.btn_add {
-	position: absolute;
-	top: 30px;
-	right: 20px;
-	padding: 5px 10px;
 }
 
 /*

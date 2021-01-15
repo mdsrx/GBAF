@@ -121,8 +121,13 @@ if (!isset($resultat) || empty($resultat)) {
 				</div>
 			</section>
 			<section class="bloc-content comment">
-				<button class="button btn_add"><a href="#add_comment">Ajouter un commentaire ></a></button>
 				<h2>Commentaires (<?php echo $nbrComments; ?>)</h2>
+				<p>
+					<br/>
+					<a href="#add_comment" class="button btn_add">Ajouter un commentaire ></a>
+					<br/>
+					<br/>
+				</p>
 				<!-- Espace commentaires -->
 				<!-- Affichage des commentaires -->
 				<ul>

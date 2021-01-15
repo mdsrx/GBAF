@@ -54,7 +54,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 				<p>Pour profiter de nos services, créez dès à présent un compte sur l'extranet de GBAF.</p>
 				
 				<p>
-					<button class="button"><a href="inscription.php">S'inscrire ></a></button>
+					<a class="button" href="inscription.php">S'inscrire ></a>
 				</p>
 			</section>
 		</div>
