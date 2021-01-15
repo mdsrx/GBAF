@@ -132,6 +132,11 @@ if (!isset($resultat) || empty($resultat)) {
 					$reponse->execute(array($id_acteur));
 					$nbrComments = 0;
 					while ($donnees = $reponse->fetch()) {
+						// si commentaire de l'utilisateur connecté
+						if ($donnees['id_user'] == $_SESSION['id_user']) {
+							$commented = true;
+							$comment_user = $donnees['post'];
+						}
 						// récupération de l'auteur du commentaire
 						$rep = $bdd->prepare('SELECT nom, prenom FROM membres WHERE id_user = ?');
 						$rep->execute(array($donnees['id_user']));
@@ -148,9 +153,24 @@ if (!isset($resultat) || empty($resultat)) {
 				</ul>
 			</section>
 			<section class="bloc-content">
+				<?php if (isset($commented)) { ?>
+				<!-- Mise à jour du commentaire -->
+				<h2>Mettre à jour mon commentaire</h2>
+				<form method="post" action="update_comment.php" class="add_comment">
+					<input type="hidden" name="id_acteur" value="<?php echo $id_acteur; ?>"/>
+					<input type="hidden" name="id_user" value="<?php echo $_SESSION['id_user'] ?>"/>
+					<p>
+						<label for="commentaire">Votre commentaire :</label>
+						<br/>
+						<br/>
+						<textarea name="commentaire" placeholder="Ecrivez votre commentaire ici" required><?php echo $comment_user; ?></textarea>
+					</p>
+					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
+				</form>
+				<?php } else { ?>
 				<!-- Ajout d'un commentaire -->
 				<h2>Ajouter un commentaire</h2>
-				<form method="post" action="add_comment.php" id="add_comment">
+				<form method="post" action="add_comment.php" class="add_comment">
 					<input type="hidden" name="id_acteur" value="<?php echo $id_acteur; ?>"/>
 					<input type="hidden" name="id_user" value="<?php echo $_SESSION['id_user'] ?>"/>
 					<p>
@@ -161,6 +181,7 @@ if (!isset($resultat) || empty($resultat)) {
 					</p>
 					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
 				</form>
+				<?php } ?>
 			</section>
 				<p>
 					<a href="partners.php"><em>Retour à la liste des partenaires ></em></a>

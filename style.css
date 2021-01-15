@@ -285,11 +285,11 @@ li .button {
 	font-weight: lighter;
 }
 
-#add_comment p {
+.add_comment p {
 	text-align: left;
 }
 
-#add_comment textarea {
+.add_comment textarea {
 	width: 100%;
 	resize: none;
 	font-family: sans-serif;
