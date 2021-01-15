@@ -89,6 +89,13 @@ if (!isset($resultat) || empty($resultat)) {
 							}
 						}
 						$rep->closeCursor();
+
+						// récupération du nbr de commentaires
+						$req = $bdd->prepare('SELECT * FROM posts WHERE id_acteur = ?');
+						$req->execute(array($id_acteur));
+						$comments = $req->fetch();
+						$nbrComments = $req->rowCount();
+						$req->closeCursor();
 					?>
 					<!-- Possibilité de voter via lien -->
 					<div class="vote">
@@ -115,7 +122,7 @@ if (!isset($resultat) || empty($resultat)) {
 			</div>
 			<div class="bloc-content comment">
 				<button class="button btn_add"><a href="#add_comment">Ajouter un commentaire ></a></button>
-				<h2>Commentaires</h2>
+				<h2>Commentaires (<?php echo $nbrComments; ?>)</h2>
 				<!-- Espace commentaires -->
 				<!-- Affichage des commentaires -->
 				<ul>

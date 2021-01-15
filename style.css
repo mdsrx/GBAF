@@ -333,8 +333,9 @@ li .button {
 	display: inline-block;
 }
 
-.likes_display .vote:first-child, .likes .vote:first-child {
+.likes_display .vote:nth-child(2), .likes .vote:nth-child(2) {
 	margin-right: 15px;
+	margin-left: 15px;
 }
 
 .likes_display {

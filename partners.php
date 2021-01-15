@@ -79,6 +79,14 @@ require 'connect_database.php';
 								$nbrDislikes++;
 						}
 						$rep->closeCursor();
+
+						// récupération du nbr de commentaires
+						$req = $bdd->prepare('SELECT * FROM posts WHERE id_acteur = ?');
+						$req->execute(array($donnees['id_acteur']));
+						$comments = $req->fetch();
+						$nbrComments = $req->rowCount();
+						$req->closeCursor();
+
 						?>
 						<div class="likes_display">
 							<div class="vote">
@@ -91,6 +99,12 @@ require 'connect_database.php';
 								<p>
 									<img src="img/dislike.png" alt="Icône Je n'aime pas"/>
 									(<?php echo $nbrDislikes; ?>)
+								</p>
+							</div>
+							<div class="vote">
+								<p>
+									<img src="img/comment.png" alt="Icône Commentaires"/>
+									(<?php echo $nbrComments; ?>)
 								</p>
 							</div>
 						</div>
