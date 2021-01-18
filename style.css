@@ -137,6 +137,30 @@ footer {
 	flex-shrink: 0;
 }
 
+@media screen and (max-width: 1024px) {
+	header .container {
+		flex-direction: column;
+	}
+
+	header #logo_container {
+		display: initial;
+		height: 60px;
+	}
+
+	header #logo_container h1 {
+		visibility: hidden
+	}
+
+	header #logo_container img {
+		margin: 0 auto;
+		display: block;
+	}
+
+	header #connected {
+		text-align: center;
+	}
+}
+
 /*
 ** Contenants
 */
@@ -148,6 +172,12 @@ footer {
 .container {
 	max-width: 1000px;
 	margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+	.container {
+		width: 100%;
+	}
 }
 
 .bloc-content {
