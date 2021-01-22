@@ -65,9 +65,11 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/LOGO_GBAF_ROUGE.png">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>GBAF - Mot de passe oublié</title>
 </head>
@@ -106,7 +108,7 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 					?>
 					<p>
 						<label for="username">Username</label>
-						<input type="text" name="username" maxlength="255" required />
+						<input type="text" name="username" id="username" maxlength="255" required />
 					</p>
 					<input type="submit" name="afficherquestion" class="button" value="Afficher ma question secrète >" />
 					<?php
@@ -115,15 +117,15 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 					?>
 					<p>
 						<label for="username">Username</label>
-						<input type="text" name="username" value="<?php echo $username; ?>" readonly />
+						<input type="text" name="username" id="username" value="<?php echo $username; ?>" readonly />
 					</p>
 					<p>
 						<label for="question">Question secrète</label>
-						<input type="text" name="question" maxlength="255" value="<?php echo $resultat['question']; ?>" readonly />
+						<input type="text" name="question" id="question" maxlength="255" value="<?php echo $resultat['question']; ?>" readonly />
 					</p>
 					<p>
 						<label for="reponse">Reponse secrète</label>
-						<input type="text" name="reponse" maxlength="255" required />
+						<input type="text" name="reponse" id="reponse" maxlength="255" required />
 					</p>
 					<input type="submit" name="confirmerreponse" class="button" value="Confirmer ma réponse secrète >" />
 					<?php
@@ -132,15 +134,15 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 					?>
 					<p>
 						<label for="username">Username</label>
-						<input type="text" name="username" value="<?php echo $username; ?>" readonly />
+						<input type="text" name="username" id="username" value="<?php echo $username; ?>" readonly />
 					</p>
 					<p>
 						<label for="pass">Nouveau mot de passe</label>
-						<input type="password" name="pass" maxlength="255" required />
+						<input type="password" name="pass" id="pass" maxlength="255" required />
 					</p>
 					<p>
 						<label for="pass_confirm">Confirmer nouveau mot de passe</label>
-						<input type="password" name="pass_confirm" maxlength="255" required />
+						<input type="password" name="pass_confirm" id="pass_confirm" maxlength="255" required />
 					</p>
 					<input type="submit" name="confirmerreponse" class="button" value="Valider >" />
 					<?php
