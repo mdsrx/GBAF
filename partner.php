@@ -34,7 +34,7 @@ if (!isset($resultat) || empty($resultat)) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,7 +169,7 @@ if (!isset($resultat) || empty($resultat)) {
 						<label for="commentaire">Votre commentaire :</label>
 						<br/>
 						<br/>
-						<textarea name="commentaire" placeholder="Ecrivez votre commentaire ici" required><?php echo $comment_user; ?></textarea>
+						<textarea id="commentaire" name="commentaire" placeholder="Ecrivez votre commentaire ici" required><?php echo $comment_user; ?></textarea>
 					</p>
 					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
 				</form>
@@ -183,7 +183,7 @@ if (!isset($resultat) || empty($resultat)) {
 						<label for="commentaire">Votre commentaire :</label>
 						<br/>
 						<br/>
-						<textarea name="commentaire" placeholder="Ecrivez votre commentaire ici" required></textarea>
+						<textarea id="commentaire" name="commentaire" placeholder="Ecrivez votre commentaire ici" required></textarea>
 					</p>
 					<input type="submit" class="button" name="envoyer" value="Envoyer votre commentaire >" />
 				</form>

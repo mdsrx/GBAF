@@ -4,7 +4,7 @@
 */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,31 +33,31 @@
 				<form method="post" action="inscription_post.php">
 					<p>
 						<label for="lastname">Nom</label>
-						<input type="text" name="lastname" maxlength="255" required />
+						<input type="text" name="lastname" id="lastname" maxlength="255" required />
 					</p>
 					<p>
 						<label for="firstname">Prénom</label>
-						<input type="text" name="firstname" maxlength="255" required />
+						<input type="text" name="firstname" id="firstname" maxlength="255" required />
 					</p>
 					<p>
 						<label for="username">Username</label>
-						<input type="text" name="username" maxlength="255" required />
+						<input type="text" name="username" id="username" maxlength="255" required />
 					</p>
 					<p>
 						<label for="pass">Mot de passe</label>
-						<input type="password" name="pass" maxlength="255" required />
+						<input type="password" name="pass" id="pass" maxlength="255" required />
 					</p>
 					<p>
 						<label for="passconfirm">Confirmer le mot de passe</label>
-						<input type="password" name="passconfirm" maxlength="255" required />
+						<input type="password" name="passconfirm" id="passconfirm" maxlength="255" required />
 					</p>
 					<p>
 						<label for="question">Question secrète</label>
-						<input type="text" name="question" maxlength="255" required />
+						<input type="text" name="question" id="question" maxlength="255" required />
 					</p>
 					<p>
 						<label for="answer">Réponse secrète</label>
-						<input type="text" name="answer" maxlength="255" required />
+						<input type="text" name="answer" id="answer" maxlength="255" required />
 					</p>
 					<input type="submit" class="button" name="inscription" value="S'inscrire >" />
 				</form>	

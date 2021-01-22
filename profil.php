@@ -22,7 +22,7 @@ if (!isset($_SESSION['id_user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,27 +51,27 @@ if (!isset($_SESSION['id_user'])) {
 					</p>
 					<p>
 						<label for="lastname">Nom</label>
-						<input type="text" name="lastname" maxlength="255" value="<?php echo $resultat['nom'] ?>" required />
+						<input type="text" name="lastname" id="lastname" maxlength="255" value="<?php echo $resultat['nom'] ?>" required />
 					</p>
 					<p>
 						<label for="firstname">Prénom</label>
-						<input type="text" name="firstname" maxlength="255" value="<?php echo $resultat['prenom'] ?>" required />
+						<input type="text" name="firstname" id="firstname" maxlength="255" value="<?php echo $resultat['prenom'] ?>" required />
 					</p>
 					<p>
 						<label for="username">Username</label>
-						<input type="text" name="username" maxlength="255" value="<?php echo $resultat['username'] ?>" required />
+						<input type="text" name="username" id="username" maxlength="255" value="<?php echo $resultat['username'] ?>" required />
 					</p>
 					<p>
 						<label for="pass">Mot de passe</label>
-						<input type="password" name="pass" maxlength="255" value="<?php echo $resultat['password'] ?>" required />
+						<input type="password" name="pass" id="pass" maxlength="255" value="<?php echo $resultat['password'] ?>" required />
 					</p>
 					<p>
 						<label for="question">Question secrète</label>
-						<input type="text" name="question" maxlength="255" value="<?php echo $resultat['question'] ?>" required />
+						<input type="text" name="question" id="question" maxlength="255" value="<?php echo $resultat['question'] ?>" required />
 					</p>
 					<p>
 						<label for="answer">Réponse secrète</label>
-						<input type="text" name="answer" maxlength="255" value="<?php echo $resultat['reponse'] ?>" required />
+						<input type="text" name="answer" id="answer" maxlength="255" value="<?php echo $resultat['reponse'] ?>" required />
 					</p>
 					<input type="submit" class="button" name="inscription" value="Mettre à jour les informations >" />
 				</form>			
