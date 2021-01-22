@@ -68,6 +68,8 @@ if (isset($_POST['pass']) && isset($_POST['pass_confirm']) && isset($_POST['user
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/LOGO_GBAF_ROUGE.png">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>GBAF - Mot de passe oublié</title>
 </head>
