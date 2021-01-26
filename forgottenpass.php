@@ -2,6 +2,9 @@
 /*
 ** PAGE DE MOT DE PASSE OUBLIE
 */
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 
 // Connexion à la BDD
 require 'connect_database.php';
